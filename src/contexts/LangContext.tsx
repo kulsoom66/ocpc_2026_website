@@ -22,7 +22,7 @@ const translations: Record<string, Record<Lang, string>> = {
   // Hero
   "hero.subtitle": {
     en: "The largest and most prestigious regional programming contest gathering higher-education students from Omani institutes since 2005.",
-    ar: "أكبر وأعرق مسابقة برمجة إقليمية تجمع طلاب التعليم العالي من المؤسسات العُمانية منذ عام 2005.",
+    ar: "أكبر وأعرق مسابقة برمجة إقليمية تجمع طلبة التعليم العالي من المؤسسات العُمانية منذ عام 2005.",
   },
   "hero.register": { en: "Register Now", ar: "سجّل الآن" },
   "hero.learn": { en: "Learn More", ar: "اعرف المزيد" },
@@ -32,7 +32,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "about.title_post": { en: "?", ar: "؟" },
   "about.description": {
     en: "The Oman Collegiate Programming Contest (OCPC) targets university students from Computer Science and all IT-related specializations to compete in teams, designing and implementing algorithmic solutions using C, C++, and Java.",
-    ar: "تستهدف مسابقة عُمان الجامعية للبرمجة (OCPC) طلاب الجامعات من تخصصات علوم الحاسب وجميع التخصصات المتعلقة بتقنية المعلومات للتنافس في فرق، وتصميم وتنفيذ حلول خوارزمية باستخدام لغات C و C++ و Java.",
+    ar: "تستهدف مسابقة عُمان الجامعية للبرمجة (OCPC) طلبة الجامعات من تخصصات علوم الحاسب وجميع التخصصات المتعلقة بتقنية المعلومات للتنافس في فرق، وتصميم وتنفيذ حلول خوارزمية باستخدام لغات C و C++ و Java.",
   },
   "about.obj1": {
     en: "Improve problem-solving and programming skills",
@@ -88,7 +88,7 @@ const translations: Record<string, Record<Lang, string>> = {
   },
   "elig.rule2": {
     en: "Each team must include exactly 3 students from the same university (branch)",
-    ar: "يجب أن يتكون كل فريق من 3 طلاب بالضبط من نفس الجامعة (الفرع)",
+    ar: "يجب أن يتكون كل فريق من 3 طلبة بالضبط من نفس الجامعة (الفرع)",
   },
   "elig.rule3": {
     en: "All members are either born after 1/1/2003 or enrolled in the university after 1/1/2022",
