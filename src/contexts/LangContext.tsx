@@ -227,8 +227,8 @@ const translations: Record<string, Record<Lang, string>> = {
 
   // Footer
   "footer.text": {
-    en: "© 2026 Oman Collegiate Programming Contest. Organized by CODE ACADEMY.",
-    ar: "© 2026 مسابقة عُمان الجامعية للبرمجة. نظمت بواسطة CODE ACADEMY.",
+    en: "© 2026 Oman Collegiate Programming Contest. Organized by CODE ACADEMY",
+    ar: "© 2026 مسابقة عُمان الجامعية للبرمجة. نظمت بواسطة CODE ACADEMY",
   },
 };
 
