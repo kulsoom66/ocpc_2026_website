@@ -1,35 +1,144 @@
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import ocpcLogo from "@/assets/ocpc-logo.png";
 import { useLang } from "@/contexts/LangContext";
+import { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
+
+const heroSlideModules = import.meta.glob<string>("../assets/hero/*.{jpg,jpeg,png,JPG,JPEG,PNG}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+const slideUrls = Object.entries(heroSlideModules)
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+  .map(([, url]) => url);
 
 const HeroSection = () => {
-  const { t } = useLang();
+  const { t, dir } = useLang();
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  const slides = useMemo(() => (slideUrls.length > 0 ? slideUrls : []), []);
+
+  const onSelect = useCallback((carousel: CarouselApi) => {
+    setCurrent(carousel.selectedScrollSnap());
+  }, []);
+
+  useEffect(() => {
+    if (!api) return;
+    onSelect(api);
+    const onSlide = () => onSelect(api);
+    api.on("select", onSlide);
+    return () => {
+      api.off("select", onSlide);
+    };
+  }, [api, onSelect]);
+
+  useEffect(() => {
+    if (!api || slides.length <= 1) return;
+    const id = window.setInterval(() => api.scrollNext(), 6000);
+    return () => window.clearInterval(id);
+  }, [api, slides.length]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: "radial-gradient(circle at 20% 50%, hsl(174 55% 45% / 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(225 40% 28% / 0.1) 0%, transparent 50%)"
-        }} />
+      {slides.length > 0 && (
+        <div className="absolute inset-0 z-0">
+          <Carousel
+            setApi={setApi}
+            opts={{ loop: slides.length > 1, direction: dir === "rtl" ? "rtl" : "ltr" }}
+            className="h-full w-full"
+          >
+            <CarouselContent className="ml-0 h-full">
+              {slides.map((src, i) => (
+                <CarouselItem key={src} className="basis-full pl-0">
+                  <div className="relative h-screen min-h-[32rem] w-full">
+                    <img src={src} alt="" className="absolute inset-0 h-full w-full object-cover" loading={i === 0 ? "eager" : "lazy"} />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            {slides.length > 1 && (
+              <>
+                <CarouselPrevious
+                  className={cn(
+                    "left-3 top-1/2 z-20 h-10 w-10 -translate-y-1/2 border-border/60 bg-background/70 text-foreground shadow-sm hover:bg-background/90 md:left-6",
+                    "disabled:opacity-40",
+                  )}
+                />
+                <CarouselNext
+                  className={cn(
+                    "right-3 top-1/2 z-20 h-10 w-10 -translate-y-1/2 border-border/60 bg-background/70 text-foreground shadow-sm hover:bg-background/90 md:right-6",
+                    "disabled:opacity-40",
+                  )}
+                />
+              </>
+            )}
+          </Carousel>
+          <div
+            className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-background/85 via-background/55 to-background/90"
+            aria-hidden
+          />
+        </div>
+      )}
+
+      <div className="absolute inset-0 z-[2] opacity-10">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 20% 50%, hsl(174 55% 45% / 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(225 40% 28% / 0.1) 0%, transparent 50%)",
+          }}
+        />
       </div>
+
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <img src={ocpcLogo} alt="OCPC Logo" className="h-28 md:h-36 mx-auto mb-6" />
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-2">
-            <span className="text-gradient-gold">OCPC</span>{" "}
-            <span className="text-foreground">2026</span>
+            <span className="text-gradient-gold">OCPC</span> <span className="text-foreground">2026</span>
           </h1>
-          <p className="text-muted-foreground text-lg md:text-xl mt-6 max-w-2xl mx-auto leading-relaxed">
-            {t("hero.subtitle")}
-          </p>
+          <p className="mt-6 max-w-2xl mx-auto text-lg leading-relaxed text-black md:text-xl">{t("hero.subtitle")}</p>
         </motion.div>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.8 }} className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://icpc.global/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-lg px-8 py-3 font-semibold text-primary-foreground bg-primary hover:opacity-90 transition-opacity">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <a
+            href="https://icpc.global/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-lg px-8 py-3 font-semibold text-primary-foreground bg-primary hover:opacity-90 transition-opacity"
+          >
             {t("hero.register")}
           </a>
-          <a href="#about" className="inline-flex items-center justify-center rounded-lg px-8 py-3 font-semibold bg-accent text-accent-foreground hover:opacity-90 transition-opacity">
+          <a
+            href="#about"
+            className="inline-flex items-center justify-center rounded-lg px-8 py-3 font-semibold bg-accent text-accent-foreground hover:opacity-90 transition-opacity"
+          >
             {t("hero.learn")}
           </a>
         </motion.div>
+
+        {slides.length > 1 && (
+          <div className="mt-12 flex justify-center gap-2" role="tablist" aria-label="Hero slides">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                role="tab"
+                aria-selected={i === current}
+                className={cn(
+                  "h-2 rounded-full transition-all duration-300",
+                  i === current ? "w-8 bg-primary" : "w-2 bg-muted-foreground/40 hover:bg-muted-foreground/60",
+                )}
+                onClick={() => api?.scrollTo(i)}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
