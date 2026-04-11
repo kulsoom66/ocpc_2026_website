@@ -202,7 +202,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "awards.ocpc1": { en: "Participation certificates for all participants", ar: "شهادات مشاركة لجميع المشاركين" },
   "awards.ocpc2": { en: "Packs for all participants", ar: "حقائب لجميع المشاركين" },
   "awards.ocpc3": { en: "Discounted registration fees for sub-regional participations", ar: "رسوم تسجيل مخفضة للمشاركات المرحلية" },
-  "awards.ocpc4": { en: "Total cash prizes exceeding 9,000 OMR for top three teams", ar: "جوائز نقدية تتجاوز 9,000 ريال عُماني لأفضل ثلاث فرق" },
+  "awards.ocpc4": { en: "Cash prizes for top three teams", ar: "جوائز نقدية لأفضل ثلاث فرق" },
   "awards.ocpc5": { en: "Specialized training for ACPC qualified teams", ar: "تدريب متخصص للفرق المتأهلة لـ ACPC" },
   "awards.ocpc6": { en: "Full sponsored participation in ACPC for qualified teams", ar: "مشاركة مكفولة بالكامل في ACPC للفرق المتأهلة" },
   "awards.prizes": { en: "Total cash prizes", ar: "إجمالي الجوائز النقدية" },
@@ -214,7 +214,7 @@ const translations: Record<string, Record<Lang, string>> = {
     en: "Registration is done through the ICPC global platform. Follow the manual guide for step-by-step instructions.",
     ar: "يتم التسجيل من خلال منصة ICPC العالمية. اتبع دليل التسجيل للحصول على تعليمات خطوة بخطوة.",
   },
-  "reg.icpc": { en: "ICPC Registration", ar: "تسجيل ICPC" },
+  "reg.icpc": { en: "Registration (via ICPC website)", ar: "التسجيل (عبر موقع ICPC)" },
   "reg.guide": { en: "Registration Guide", ar: "دليل التسجيل" },
 
   // Contact

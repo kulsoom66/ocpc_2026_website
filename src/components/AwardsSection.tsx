@@ -45,11 +45,11 @@ const AwardsSection = () => {
                 </li>
               ))}
             </ul>
-            <div className="mt-6 bg-primary/10 rounded-lg p-4 text-center">
+            {/* <div className="mt-6 bg-primary/10 rounded-lg p-4 text-center">
               <GraduationCap className="w-8 h-8 text-primary mx-auto mb-2" />
               <p className="text-2xl font-bold text-gradient-gold">9,000+ OMR</p>
               <p className="text-xs text-muted-foreground mt-1">{t("awards.prizes")}</p>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </div>
