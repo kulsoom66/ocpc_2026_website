@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { useLang } from "@/contexts/LangContext";
-import { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { type CarouselApi, Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 
 const heroSlideModules = import.meta.glob<string>("../assets/hero/*.{jpg,jpeg,png,JPG,JPEG,PNG}", {
@@ -59,22 +59,6 @@ const HeroSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            {slides.length > 1 && (
-              <>
-                <CarouselPrevious
-                  className={cn(
-                    "left-3 top-1/2 z-20 h-10 w-10 -translate-y-1/2 border-border/60 bg-background/70 text-foreground shadow-sm hover:bg-background/90 md:left-6",
-                    "disabled:opacity-40",
-                  )}
-                />
-                <CarouselNext
-                  className={cn(
-                    "right-3 top-1/2 z-20 h-10 w-10 -translate-y-1/2 border-border/60 bg-background/70 text-foreground shadow-sm hover:bg-background/90 md:right-6",
-                    "disabled:opacity-40",
-                  )}
-                />
-              </>
-            )}
           </Carousel>
           <div
             className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-background/85 via-background/55 to-background/90"
