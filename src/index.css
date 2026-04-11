@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 20% 97%;
+    --foreground: 210 30% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 30% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 30% 18%;
+
+    --primary: 174 55% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 225 40% 28%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 180 15% 92%;
+    --muted-foreground: 210 15% 45%;
+
+    --accent: 225 40% 28%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 15% 88%;
+    --input: 180 15% 88%;
+    --ring: 174 55% 45%;
+
+    --radius: 0.75rem;
+
+    --hero-gradient: linear-gradient(135deg, hsl(180 20% 97%) 0%, hsl(180 25% 93%) 50%, hsl(174 20% 94%) 100%);
+    --teal-gradient: linear-gradient(135deg, hsl(174 55% 45%), hsl(174 60% 55%));
+    --navy-gradient: linear-gradient(135deg, hsl(225 40% 28%), hsl(225 45% 38%));
+    --card-glow: 0 4px 20px hsl(174 55% 45% / 0.1);
+
+    font-family: 'Space Grotesk', 'Noto Kufi Arabic', system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', 'Noto Kufi Arabic', system-ui, sans-serif;
+  }
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--teal-gradient);
+  }
+  .bg-hero {
+    background-image: var(--hero-gradient);
+  }
+  .glow-card {
+    box-shadow: var(--card-glow);
+  }
+  .section-divider {
+    @apply w-20 h-1 rounded-full mx-auto;
+    background-image: var(--teal-gradient);
+  }
+}
