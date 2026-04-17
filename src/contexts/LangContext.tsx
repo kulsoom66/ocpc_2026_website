@@ -139,8 +139,8 @@ const translations: Record<string, Record<Lang, string>> = {
 "schedule.title_gold": { en: "Schedule", ar: "المسابقة المرحلية" },
 
 "schedule.info": {
-  en: "Contest Date: 25 April 2026 • Venue: Host Universities • Registration (Free): 7–18 April 2026 • Acceptance: 21 April 2026 • Top teams qualify for OCPC October 2026",
-  ar: "تاريخ المسابقة: 25 أبريل 2026 • المكان: الجامعات المستضيفة • التسجيل (مجاناً): 7–18 أبريل 2026 • القبول: 21 أبريل 2026 • تتأهل أفضل الفرق إلى OCPC في أكتوبر 2026",
+  en: "Contest Date: 25 April 2026 • Venue: Host Universities • Registration (Free): 7-25 April 2026 • Acceptance: 21 April 2026 • Top teams qualify for OCPC October 2026",
+  ar: "تاريخ المسابقة: 25 أبريل 2026 • المكان: الجامعات المستضيفة • التسجيل (مجاناً): 7–25 أبريل 2026 • القبول: 21 أبريل 2026 • تتأهل أفضل الفرق إلى OCPC في أكتوبر 2026",
 },
 
 "schedule.e1_time": { 
