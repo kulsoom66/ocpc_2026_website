@@ -97,9 +97,11 @@ const HeroSection = () => {
             className="flex flex-col justify-center gap-4 sm:flex-row sm:gap-7"
           >
             <a
-              href="https://icpc.global/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#register"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector("#register")?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 font-semibold text-primary-foreground transition-opacity hover:opacity-90"
             >
               {t("hero.register")}

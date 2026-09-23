@@ -2,26 +2,33 @@ import { motion } from "framer-motion";
 import { Calendar } from "lucide-react";
 import { useLang } from "@/contexts/LangContext";
 
-const ScheduleSection = () => {
+interface ScheduleSectionProps {
+  id: string;
+  prefix: string;
+  className?: string;
+}
+
+const ScheduleSection = ({ id, prefix, className = "" }: ScheduleSectionProps) => {
   const { t } = useLang();
 
   const schedule = [
-    { time: t("schedule.e1_time"), event: t("schedule.e1") },
-    { time: t("schedule.e2_time"), event: t("schedule.e2") },
-    { time: t("schedule.e3_time"), event: t("schedule.e3") },
-    { time: t("schedule.e4_time"), event: t("schedule.e4") },
-    { time: t("schedule.e5_time"), event: t("schedule.e5") },
+    { time: t(`${prefix}.e1_time`), event: t(`${prefix}.e1`) },
+    { time: t(`${prefix}.e2_time`), event: t(`${prefix}.e2`) },
+    { time: t(`${prefix}.e3_time`), event: t(`${prefix}.e3`) },
+    { time: t(`${prefix}.e4_time`), event: t(`${prefix}.e4`) },
+    { time: t(`${prefix}.e5_time`), event: t(`${prefix}.e5`) },
   ];
 
   return (
-    <section id="schedule" className="py-24 px-6">
+    <section id={id} className={`py-24 px-6 ${className}`}>
       <div className="max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t("schedule.title_pre")}<span className="text-gradient-gold">{t("schedule.title_gold")}</span>
+            {t(`${prefix}.title_pre`)}
+            <span className="text-gradient-gold">{t(`${prefix}.title_gold`)}</span>
           </h2>
           <div className="section-divider mb-8" />
-          <p className="text-muted-foreground">{t("schedule.info")}</p>
+          <p className="text-muted-foreground">{t(`${prefix}.info`)}</p>
         </motion.div>
         <div className="relative">
           <div className="absolute start-8 top-0 bottom-0 w-px bg-border" />

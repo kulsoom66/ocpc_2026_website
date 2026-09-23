@@ -20,7 +20,8 @@ const Index = () => {
       <AboutSection />
       <SubRegionalSection />
       <EligibilitySection />
-      <ScheduleSection />
+      <ScheduleSection id="schedule" prefix="schedule" />
+      <ScheduleSection id="ocpc-schedule" prefix="ocpc_schedule" className="bg-secondary/30" />
       <AwardsSection />
       <RegistrationSection />
       <ContactSection />

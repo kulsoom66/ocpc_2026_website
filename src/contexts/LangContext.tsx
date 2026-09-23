@@ -14,7 +14,8 @@ const translations: Record<string, Record<Lang, string>> = {
   "nav.about": { en: "About", ar: "عن" },
   "nav.subregionals": { en: "Sub-Regionals", ar: "المسابقات المرحلية" },
   "nav.eligibility": { en: "Eligibility", ar: "الأهلية" },
-  "nav.schedule": { en: "Schedule", ar: "الجدول" },
+  "nav.schedule": { en: "Regional Schedule", ar: "جدول المسابقة المرحلية" },
+  "nav.ocpc_schedule": { en: "OCPC Schedule", ar: "جدول المسابقة الوطنية" },
   "nav.awards": { en: "Awards", ar: "الجوائز" },
   "nav.register": { en: "Register", ar: "التسجيل" },
   "nav.contact": { en: "Contact", ar: "تواصل" },
@@ -24,7 +25,7 @@ const translations: Record<string, Record<Lang, string>> = {
     en: "The largest and most prestigious regional programming contest gathering higher-education students from Omani institutes since 2005.",
     ar: "أكبر وأعرق مسابقة برمجة إقليمية تجمع طلبة التعليم العالي من المؤسسات العُمانية منذ عام 2005.",
   },
-  "hero.register": { en: "Register Now", ar: "سجّل الآن" },
+  "hero.register": { en: "Registration Closed", ar: "التسجيل مغلق" },
   "hero.learn": { en: "Learn More", ar: "اعرف المزيد" },
 
   // About
@@ -188,13 +189,59 @@ const translations: Record<string, Record<Lang, string>> = {
   ar: "حفل الختام" 
 },
 
-
+  // Schedule (OCPC 2026)
+  "ocpc_schedule.title_pre": { en: "OCPC 2026 ", ar: "جدول " },
+  "ocpc_schedule.title_gold": { en: "Schedule", ar: "المسابقة الوطنية" },
+  "ocpc_schedule.info": {
+    en: "Contest Dates: 20–21 October 2026",
+    ar: "تواريخ المسابقة: 20–21 أكتوبر 2026",
+  },
+  "ocpc_schedule.e1_time": {
+    en: "20 Oct – 7:00 to 10:00am",
+    ar: "20 أكتوبر – 7:00 إلى 10:00 صباحاً",
+  },
+  "ocpc_schedule.e1": {
+    en: "Arrival & Registration",
+    ar: "الوصول والتسجيل",
+  },
+  "ocpc_schedule.e2_time": {
+    en: "20 Oct – 10:00 to 11:00am",
+    ar: "20 أكتوبر – 10:00 إلى 11:00 صباحاً",
+  },
+  "ocpc_schedule.e2": {
+    en: "Welcome Speech",
+    ar: "الكلمة الترحيبية",
+  },
+  "ocpc_schedule.e3_time": {
+    en: "20 Oct – 11:00 to 11:15am",
+    ar: "20 أكتوبر – 11:00 إلى 11:15 صباحاً",
+  },
+  "ocpc_schedule.e3": {
+    en: "Practice Session",
+    ar: "جلسة تدريبية",
+  },
+  "ocpc_schedule.e4_time": {
+    en: "21 Oct – 10:00am to 3:00pm",
+    ar: "21 أكتوبر – 10:00 صباحاً إلى 3:00 مساءً",
+  },
+  "ocpc_schedule.e4": {
+    en: "Actual Contest",
+    ar: "المسابقة الفعلية",
+  },
+  "ocpc_schedule.e5_time": {
+    en: "21 Oct – 5:00 to 6:00pm",
+    ar: "21 أكتوبر – 5:00 إلى 6:00 مساءً",
+  },
+  "ocpc_schedule.e5": {
+    en: "Closing Ceremony",
+    ar: "حفل الختام",
+  },
 
   // Awards
   "awards.title_pre": { en: "Awards & ", ar: "الجوائز و" },
   "awards.title_gold": { en: "Benefits", ar: "المزايا" },
   "awards.sub_heading": { en: "Sub-Regional Benefits", ar: "مزايا المسابقات المرحلية" },
-  "awards.ocpc_heading": { en: "OCPC Benefits", ar: "مزايا OCPC" },
+  "awards.ocpc_heading": { en: "OCPC Benefits", ar: "مزايا المسابقة الوطنية" },
   "awards.sub1": { en: "Free registration", ar: "تسجيل مجاني" },
   "awards.sub2": { en: "Free basic training for accepted teams", ar: "تدريب أساسي مجاني للفرق المقبولة" },
   "awards.sub3": { en: "Gifts for three winning teams for each region", ar: "هدايا لثلاث فرق فائزة من كل منطقة" },
@@ -206,15 +253,26 @@ const translations: Record<string, Record<Lang, string>> = {
   "awards.ocpc5": { en: "Specialized training for ACPC qualified teams", ar: "تدريب متخصص للفرق المتأهلة لـ ACPC" },
   "awards.ocpc6": { en: "Full sponsored participation in ACPC for qualified teams", ar: "مشاركة مكفولة بالكامل في ACPC للفرق المتأهلة" },
   "awards.prizes": { en: "Total cash prizes", ar: "إجمالي الجوائز النقدية" },
+  "awards.prizes_heading_pre": { en: "OCPC ", ar: "الجوائز النقدية " },
+  "awards.prizes_heading_gold": { en: "Cash Prizes", ar: "للمسابقة الوطنية" },
+  "awards.prizes_subtitle": {
+    en: "Cash awards for the top three teams at OCPC 2026.",
+    ar: "جوائز نقدية لأفضل ثلاث فرق في المسابقة الوطنية.",
+  },
+  "awards.place_1": { en: "1st Place", ar: "المركز الأول" },
+  "awards.place_2": { en: "2nd Place", ar: "المركز الثاني" },
+  "awards.place_3": { en: "3rd Place", ar: "المركز الثالث" },
+  "awards.currency": { en: "OMR", ar: "ر.ع." },
+  "awards.prizes_total_amount": { en: "6,750", ar: "6,750" },
 
   // Registration
-  "reg.title_gold": { en: "Register", ar: "سجّل" },
-  "reg.title_post": { en: " Now", ar: " الآن" },
+  "reg.title_gold": { en: "Registration", ar: "التسجيل" },
+  "reg.title_post": { en: " Closed", ar: " مغلق" },
+  "reg.badge": { en: "Closed", ar: "مغلق" },
   "reg.description": {
-    en: "Registration is done through the ICPC global platform. Follow the manual guide for step-by-step instructions.",
-    ar: "يتم التسجيل من خلال منصة ICPC العالمية. اتبع دليل التسجيل للحصول على تعليمات خطوة بخطوة.",
+    en: "Registration for OCPC 2026 is now closed. Thank you to all teams who registered.",
+    ar: "التسجيل في مسابقة OCPC 2026 مغلق الآن. شكراً لجميع الفرق التي سجّلت.",
   },
-  "reg.icpc": { en: "Registration (via ICPC website)", ar: "التسجيل (عبر موقع ICPC)" },
   "reg.guide": { en: "Registration Guide", ar: "دليل التسجيل" },
 
   // Contact

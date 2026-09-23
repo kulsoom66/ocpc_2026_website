@@ -12,6 +12,7 @@ const Navbar = () => {
     { href: "#subregional", label: t("nav.subregionals") },
     { href: "#eligibility", label: t("nav.eligibility") },
     { href: "#schedule", label: t("nav.schedule") },
+    { href: "#ocpc-schedule", label: t("nav.ocpc_schedule") },
     { href: "#awards", label: t("nav.awards") },
     { href: "#register", label: t("nav.register") },
     { href: "#contact", label: t("nav.contact") },
@@ -23,9 +24,9 @@ const Navbar = () => {
         <a href="#" className="flex items-center gap-2">
           <img src={ocpcLogo} alt="OCPC Logo" className="h-10" />
         </a>
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-4 lg:gap-5">
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={(e) => { e.preventDefault(); document.querySelector(l.href)?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a key={l.href} href={l.href} onClick={(e) => { e.preventDefault(); document.querySelector(l.href)?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sm whitespace-nowrap text-muted-foreground hover:text-foreground transition-colors">
               {l.label}
             </a>
           ))}
