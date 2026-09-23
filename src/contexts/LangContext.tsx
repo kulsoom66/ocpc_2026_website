@@ -127,7 +127,7 @@ const translations: Record<string, Record<Lang, string>> = {
   // "schedule.e2_time": { en: "8/April – 10:00am", ar: "8 أبريل – 10:00 صباحاً" },
   // "schedule.e2": { en: "Opening Ceremony", ar: "حفل الافتتاح" },
   // "schedule.e3_time": { en: "8/April – 11:30 to 3:00pm", ar: "8 أبريل – 11:30 إلى 3:00 مساءً" },
-  // "schedule.e3": { en: "Practice Session", ar: "جلسة تدريبية" },
+  // "schedule.e3": { en: "Practice Contest", ar: "المسابقة التجريبية" },
   // "schedule.e4_time": { en: "9/April – 9:00 to 2:00pm", ar: "9 أبريل – 9:00 إلى 2:00 مساءً" },
   // "schedule.e4": { en: "Actual Contest", ar: "المسابقة الفعلية" },
   // "schedule.e5_time": { en: "9/April – 4:00pm", ar: "9 أبريل – 4:00 مساءً" },
@@ -167,8 +167,8 @@ const translations: Record<string, Record<Lang, string>> = {
   ar: "25 أبريل – 9:00 إلى 11:00 صباحاً" 
 },
 "schedule.e3": { 
-  en: "Practice Session", 
-  ar: "جلسة تدريبية" 
+  en: "Practice Contest", 
+  ar: "المسابقة التجريبية" 
 },
 
 "schedule.e4_time": { 
@@ -217,8 +217,8 @@ const translations: Record<string, Record<Lang, string>> = {
     ar: "20 أكتوبر – 11:00 إلى 11:15 صباحاً",
   },
   "ocpc_schedule.e3": {
-    en: "Practice Session",
-    ar: "جلسة تدريبية",
+    en: "Practice Contest",
+    ar: "المسابقة التجريبية",
   },
   "ocpc_schedule.e4_time": {
     en: "21 Oct – 10:00am to 3:00pm",
